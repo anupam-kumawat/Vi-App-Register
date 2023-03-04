@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style-login.css')}}">
+
+</head>
+
+<div class="container" style="z-index: 20; position: absolute; width: 100%; top: 2rem ;">
+    <img class="logo"
+  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/TCIL-Telecommunication-Consultants-India-Limited-Logo.jpg/220px-TCIL-Telecommunication-Consultants-India-Limited-Logo.jpg"
+  alt="Company Logo">
+</div>
+
+
+<body>
+
+    <div id="bg"></div>
+
+    <form action="{{url_for('login')}}" method="post">
+
+        <br><br><br>
+  
+        <div class="msg">{{msg}}</div>
+    
+      <div class="form-field">
+        <input id="username" name="username" type="text" placeholder="Enter your Username" required/>
+      </div>
+
+      
+      <div class="form-field">
+        <input id="password" name="password" type="password" placeholder="Enter your password" required/>                         
+      </div>
+      
+      <div class="form-field">
+        <button class="btn" type="submit">Log in</button>
+      </div>
+      
+    
+    </form>
+    
+</body>
+</html>

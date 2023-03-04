@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <style>
+    /* Add styles for the page */
+    .container {
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+
+    }
+
+    h1 {
+      font-family: sans-serif;
+      color: #3523bf;
+      font-size: 36px;
+      margin-bottom: 40px;
+
+    }
+
+    select,
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password_text"] {
+      width: 20%;
+      padding: 12px;
+      margin-bottom: 70px;
+      margin-right: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+      border: 2px solid rgb(8, 7, 7);
+      border-radius: 4px;
+
+    }
+
+    input[type="submit"] {
+      width: 50%;
+      padding: 10px;
+      font-size: 18px;
+      box-sizing: border-box;
+      border: 2px solid rgb(9, 6, 6);
+      border-radius: 100px;
+      background-color: #3523bf;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Add styles for the company logo */
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Add styles for the Date and time */
+
+
+    input[type="datetime-local"] {
+      width: 50%;
+      padding: 12px;
+      font-size: 18px;
+      margin-bottom: 30px;
+      border: 2px solid rgb(8, 7, 7);
+      border-radius: 4px;
+
+    }
+
+    .lable {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    /* Add styles for the Lable (Create and update at) */
+
+    label {
+      display: block;
+      font-size: 1.12em;
+      font-weight: bolder;
+      margin-bottom: 0.8em;
+    }
+    
+  </style> -->
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+
+  <!-- <div style=" margin-right: 0rem;">
+  <table >
+    <tr>
+      <td >
+        <div >
+          <a href="/users" class="btn" >Users</a>
+        </div>
+      </td>
+      <td>
+        <div>
+          <a href="{{ url_for('logout') }}" class="btn" >Logout</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div> -->
+
+  
+<div style="margin-left: 83%;">
+  <table>
+    <tr>
+      <td>
+        <a href="/users" class="btn-users" >Users</a>
+      </td>
+      <td>
+        <a href="{{url_for('logout')}}" class="btn-lout" >Logout</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <!-- <div style="text-align: right; margin-top: 0rem; margin-right: 8rem;">
+    <a href="/users" class="btn-users" >Users</a>
+  </div>
+  <div style="text-align: right; margin-top: 0rem;">
+    <a href="{{ url_for('logout') }}" class="btn-lout" >Logout</a>
+  </div> -->
+  
+  <div class="container">
+    
+    <!-- Add company logo -->
+    <img class="logo" 
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/TCIL-Telecommunication-Consultants-India-Limited-Logo.jpg/220px-TCIL-Telecommunication-Consultants-India-Limited-Logo.jpg"
+      alt="Company Logo"
+      style="z-index: 20; position: absolute; width: auto; top: 1rem ; left: 1rem;">
+
+      
+
+    <!-- Add form fields -->
+
+    <!-- <html>
+      <table class="table1">
+        <thead>
+          <tr>
+            <th>District ID</th>
+            <th>District</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ajmer</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Alwar</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Banswara</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Baran</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Barmer</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Bharatpur</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Bhilwara</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Bikaner</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Bundi</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>Chittorgarh</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Churu</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td>Dausa</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>Dholpur</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>Dungarpur</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>Ganganagar</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Hanumangarh</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>Jaipur-1</td>
+            <td>17</td>
+          </tbody>
+          <style>
+            table.table1 {
+              position: absolute;
+              top: 1mm;
+              left: 1mm;
+              width: 10%;
+              border-collapse: collapse;
+      
+            }
+      
+            th,
+            td {
+              border: 3px solid rgb(8, 8, 8);
+              padding: 5px;
+              text-align: center;
+      
+            }
+      
+            th {
+              background-color: #3523bf;
+              font-family: sans-serif;
+              color: white;
+            }
+          </style>
+        </table>
+  
+
+      </html>
+      
+        </tr>
+      <html>
+      <table class="table2">
+        <thead>
+          <tr>
+            <th>District ID</th>
+            <th>District</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jaisalmer</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Jalore</td>
+            <td>19</td>
+          </tr>
+          <tr>
+            <td>Jhalawar</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>Jhunjhunu</td>
+            <td>21</td>
+          </tr>
+          <tr>
+            <td>Jodhpur</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td>Karauli</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>Kota</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>Nagaur</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Pali</td>
+            <td>26</td>
+          </tr>
+           <tr>
+             <td>Pratapgarh</td>
+             <td>27</td>
+             </tr>
+              <tr>
+                <td>Rajsamand</td>
+                <td>28</td>
+              </tr>
+              <tr>
+                <td>Sikar</td>
+                <td>29</td>
+              </tr>
+              <tr>
+                <td>Sirohi</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>Sawai Madhopur
+                </td>
+                <td>31</td>
+              </tr>
+              <tr>
+                <td>Tonk</td>
+                <td>32</td>
+                <tr>
+                <td>Udaipur</td>
+                <td>33</td>
+              </tr>
+              <tr>
+              </tr>
+                <td>Jaipur-2</td>
+                <td>34</td>
+              </tr>
+                </tbody>
+                <style>
+                  table.table2 {
+                    position: absolute;
+                    top: 3.5in;
+                    left: 5.3cm;
+                    width: 10%;
+                    border-collapse: collapse;
+            
+                  }
+            
+                  th,
+                  td {
+                    border: 3px solid rgb(8, 8, 8);
+                    padding: 5px;
+                    text-align: center;
+            
+                  }
+            
+                  th {
+                    background-color: #3523bf;
+                    font-family: sans-serif;
+                    color: white;
+                  }
+                </style>
+      </table>
+ 
+    </html> -->
+
+<html>
+    <h1>Vehicle Inspection App ID Creator</h1>
+    <br>
+    <form action="{{url_for('register')}}" method="post">
+      <div>{{msg}}</div>
+      <br>
+    <input name="name" type="text" placeholder="Name" required>
+    <input name="email" type="text" placeholder="Email" required>
+    <input name="mobile" type="tel" placeholder="Mobile" required>
+    <select name="district_id" required>
+      <option value="" disabled selected>District ID</option>
+      <option value="1">1 - Ajmer</option>
+      <option value="2">2 - Alwar</option>
+      <option value="3">3 - Banswara</option>
+      <option value="4">4 - Baran</option>
+      <option value="5">5 - Barmer</option>
+      <option value="6">6 - Bharatpur</option>
+      <option value="7">7 - Bhilwara</option>
+      <option value="8">8 - Bikaner</option>
+      <option value="9">9 - Bundi</option>
+      <option value="10">10 - Chittorgarh</option>
+      <option value="11">11 - Churu</option>
+      <option value="12">12 - Dausa</option>
+      <option value="13">13 - Dholpur</option>
+      <option value="14">14 - Dungarpur</option>
+      <option value="15">15 - Ganganagar</option>
+      <option value="16">16 - Hanumangarh</option>
+      <option value="17">17 - Jaipur-1</option>
+      <option value="18">18 - Jaisalmer</option>
+      <option value="19">19 - Jalore</option>
+      <option value="20">20 - Jhalawar</option>
+      <option value="21">21 - Jhunjhunu</option>
+      <option value="22">22 - Jodhpur</option>
+      <option value="23">23 - Karauli</option>
+      <option value="24">24 - Kota</option>
+      <option value="25">25 - Nagaur</option>
+      <option value="26">26 - Pali</option>
+      <option value="27">27 - Pratapgarh</option>
+      <option value="28">28 - Rajsamand</option>
+      <option value="29">29 - Sikar</option>
+      <option value="30">30 - Sirohi</option>
+      <option value="31">31 - Sawai Madhopur</option>
+      <option value="32">32 - Tonk</option>
+      <option value="33">33 - Udaipur</option>
+      <option value="34">34 - Jaipur-2</option>
+    </select>
+    <input name="password" type="text" value="$2y$10$owQf3HeCrKPQJX/qmLZGm.TJqrL32lnH/KRErC/sOBtXAfWAr2O3i" required readonly>
+    <input name="password_text" type="text" value="12345678" required readonly>
+    <label for="datetime">Created at </label>
+    <input name="created_at" type="datetime-local" id="datetime" required>
+    <label for="datetime">Updated at </label>
+    <input name="updated_at" type="datetime-local" id="datetime" required>
+    <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  
+  
+</body>
+
+
+</html>
+
